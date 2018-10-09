@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "ferreira.hallefy.easyinvestiment"
+        applicationId "ferreira.hallefy.easyinvestment"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
