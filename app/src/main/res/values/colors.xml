@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c3cac9</color>
+    <color name="colorPrimaryDark">#00c8b3</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorTextView">#686766</color>
+    <color name="skeleton_text">#a2878787</color>
+</resources>

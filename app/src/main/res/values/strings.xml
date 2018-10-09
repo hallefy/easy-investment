@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Easy Investiment</string>
+    <string name="hintPercentual">100%</string>
+    <string name="hintData">dia/mês/ano</string>
+    <string name="hintMoney">R$</string>
+    <string name="text_investimento">Qual a data de investimento do investimento ? *</string>
+    <string name="text_aplicacao">Quanto você gostaria de aplicar ? *</string>
+    <string name="text_cdi">Qual o percentual do CDI do investimento ? *</string>
+    <string name="msg_simulacao">Resultado da simulação</string>
+    <string name="msg_valor">R$ 9.999,99</string>
+    <string name="msg_rendimento">Rendimento total de</string>
+    <string name="msg_cifrao">R$</string>
+    <string name="msg_valor_aplicado">Valor aplicado inicialmente</string>
+    <string name="msg_valor_burto">Valor bruto do investimento</string>
+    <string name="msg_valor_investimento">Valor do investimento</string>
+    <string name="msg_valor_ir">IR sobre investimento</string>
+    <string name="msg_valor_liquido">Valor líquido do investimento</string>
+    <string name="msg_data_resgate">Data de resgate</string>
+    <string name="valor_data">00/00/0000</string>
+    <string name="msg_dias_corridos">Dias corridos</string>
+    <string name="valor_dias">365</string>
+    <string name="msg_rendimento_mensal">Rendimento mensal</string>
+    <string name="valor_percentual">57%</string>
+    <string name="msg_percentual_cdi">Percentual do CDI investido</string>
+    <string name="msg_rentabilidade_anual">Rentabilidade anual</string>
+    <string name="msg_rentabilidade_periodo">Rentabilidade no período</string>
+</resources>
