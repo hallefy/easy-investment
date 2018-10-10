@@ -1,10 +1,10 @@
-package ferreira.hallefy.easyinvestment.views.splash.view
+package ferreira.hallefy.easyinvestment.presentation.views.splash.view
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import ferreira.hallefy.easyinvestment.R
-import ferreira.hallefy.easyinvestment.views.formulary.view.ActivityFormulary
+import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary
 import kotlinx.android.synthetic.main.activity_splash.*
 
 

@@ -5,7 +5,7 @@
     android:id="@+id/viewForm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.formulary.view.ActivityFormulary">
+    tools:context=".presentation.views.formulary.view.ActivityFormulary">
 
     <TextView
         android:id="@+id/msgAplicacao"

@@ -4,8 +4,8 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import dagger.android.support.AndroidSupportInjectionModule
-import dagger.android.support.DaggerApplication
 import ferreira.hallefy.easyinvestment.di.modules.AplicationModule
 import javax.inject.Singleton
 
@@ -17,7 +17,7 @@ import javax.inject.Singleton
     AplicationModule::class,
     ClientModule::class]))
 
-interface AplicationComponent : AndroidInjector<DaggerApplication> {
+interface ApplicationComponent : AndroidInjector<DaggerApplication> {
 
     override fun inject(instance: DaggerApplication)
 
@@ -26,6 +26,6 @@ interface AplicationComponent : AndroidInjector<DaggerApplication> {
 
         @BindsInstance
         fun application(application: Application): Builder
-        fun build(): AplicationComponent
+        fun build(): ApplicationComponent
     }
 }

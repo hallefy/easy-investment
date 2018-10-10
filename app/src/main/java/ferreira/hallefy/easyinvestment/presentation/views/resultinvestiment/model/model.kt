@@ -1,4 +1,4 @@
-package ferreira.hallefy.easyinvestment.views.resultinvestiment.model
+package ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.model
 
 data class ResultInvestiment(
         var grossAmount: String,

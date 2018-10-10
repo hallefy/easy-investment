@@ -1,13 +1,13 @@
-package ferreira.hallefy.easyinvestment.views.formulary.view
+package ferreira.hallefy.easyinvestment.presentation.views.formulary.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import dagger.android.support.DaggerAppCompatActivity
 import ferreira.hallefy.easyinvestment.R
-import ferreira.hallefy.easyinvestment.views.resultinvestiment.view.ActivityResultInvestiment
+import ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.view.ActivityResultInvestiment
 import kotlinx.android.synthetic.main.activity_form.*
 
-class ActivityFormulary : AppCompatActivity() {
+class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

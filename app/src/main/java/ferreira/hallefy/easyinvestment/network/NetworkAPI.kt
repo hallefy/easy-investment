@@ -1,6 +1,6 @@
 package ferreira.hallefy.easyinvestment.network
 
-import ferreira.hallefy.easyinvestment.views.resultinvestiment.model.ResultInvestiment
+import ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.model.ResultInvestiment
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
