@@ -19,20 +19,53 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\halle\Desktop\testeEasyinvest\logo.png" />
+                                      <entry key="imageAsset" value="$PROJECT_DIR$/../android/C:\Users\halle\Desktop\testeEasyinvest\logo.png" />
                                       <entry key="outputName" value="ic_logo" />
-                                      <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="4d4289" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
+                            <entry key="launcher">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="foregroundClipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="trimmed" value="true" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="68" />
+                                                <entry key="trimmed" value="true" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="f2f5f8" />
+                                      <entry key="foregroundImage" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_logo.png" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </PersistentState>

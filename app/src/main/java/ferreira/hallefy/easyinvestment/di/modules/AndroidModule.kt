@@ -1,4 +1,4 @@
-package ferreira.hallefy.easyinvestment.di
+package ferreira.hallefy.easyinvestment.di.modules
 
 import dagger.Module
 import dagger.Provides

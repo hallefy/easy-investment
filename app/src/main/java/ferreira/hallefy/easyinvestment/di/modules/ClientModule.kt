@@ -1,9 +1,10 @@
-package ferreira.hallefy.easyinvestment.di
+package ferreira.hallefy.easyinvestment.di.modules
 
 import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ferreira.hallefy.easyinvestment.BuildConfig
+import ferreira.hallefy.easyinvestment.di.ApplicationQualifier
 import ferreira.hallefy.easyinvestment.utils.Constants.CACHE_SIZE
 import ferreira.hallefy.easyinvestment.utils.getTimeout
 import ferreira.hallefy.easyinvestment.utils.isNetworkAvailable
