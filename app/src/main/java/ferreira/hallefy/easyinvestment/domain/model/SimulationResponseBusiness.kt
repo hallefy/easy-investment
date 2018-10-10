@@ -1,15 +1,27 @@
 package ferreira.hallefy.easyinvestment.domain.model
 
+
+data class InvestmentParameterBusiness(
+    var investedAmount: Int,
+    var yearlyInterestRate: Double,
+    var maturityTotalDays: Int,
+    var maturityBusinessDays: Int,
+    var maturityDate: String,
+    var rate: Int,
+    var isTaxFree: Boolean
+)
+
 data class SimulationResponseBusiness(
-    var grossAmount: String,
-    var taxesAmount: String,
-    var netAmount: String,
-    var grossAmountProfit: String,
-    var netAmountProfit: String,
-    var annualGrossRateProfit: String,
-    var monthlyGrossRateProfit: String,
-    var dailyGrossRateProfit: String,
-    var taxesRate: String,
-    var rateProfit: String,
-    var annualNetRateProfit: String
+    var investmentParameter: InvestmentParameterBusiness,
+    var grossAmount: Double,
+    var taxesAmount: Double,
+    var netAmount: Double,
+    var grossAmountProfit: Double,
+    var netAmountProfit: Double,
+    var annualGrossRateProfit: Double,
+    var monthlyGrossRateProfit: Double,
+    var dailyGrossRateProfit: Double,
+    var taxesRate: Int,
+    var rateProfit: Double,
+    var annualNetRateProfit: Double
 )

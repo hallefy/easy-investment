@@ -25,7 +25,6 @@ android {
 }
 
 kapt {
-    generateStubs = true
     useBuildCache = true
 }
 
@@ -67,6 +66,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
     implementation "com.squareup.okhttp3:okhttp:$okhttp"
 
+    androidTestImplementation "com.nhaarman:mockito-kotlin:$mockitoKotlin"
+    testImplementation "com.nhaarman:mockito-kotlin:$mockitoKotlin"
 
 
 }

@@ -17,6 +17,7 @@ buildscript {
     ext.adapterRxjava2 = '2.2.0'
     ext.rxjava2 = '2.1.5'
     ext.rxandroid = '2.0.1'
+    ext.mockitoKotlin = '1.5.0'
 
     repositories {
         google()

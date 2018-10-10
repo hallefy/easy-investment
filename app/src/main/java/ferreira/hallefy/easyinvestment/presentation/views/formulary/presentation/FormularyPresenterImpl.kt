@@ -14,7 +14,7 @@ class FormularyPresenterImpl @Inject constructor(
 ) : FormularyPresenter{
 
     override fun request() {
-        var params = SimulationRequest(3000, "CDI", 123, false, "2023-03-03")
+        var params = SimulationRequest(3000.0, "CDI", 123, false, "2023-03-03")
         useCase.execute(SimulationDisposable(), params)
     }
 

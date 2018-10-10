@@ -10,7 +10,7 @@ interface NetworkAPI {
 
     @GET(END_POINT)
     fun request(
-            @Query("investedAmount") investedAmount: Int,
+            @Query("investedAmount") investedAmount: Double,
             @Query("index") index: String,
             @Query("rate") rate: Int,
             @Query("isTaxFree") isTaxFree: Boolean,

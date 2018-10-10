@@ -21,15 +21,10 @@ class ClientModule {
     @Provides
     fun providesOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-        cache: Cache,
         @ApplicationQualifier context: Context
     ): OkHttpClient {
 
         val okHttpClient = OkHttpClient.Builder()
-//            .readTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-//            .connectTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-//            .writeTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-//            .cache(cache)
             .addInterceptor { chain ->
 
                 val request: Request.Builder = chain.request().newBuilder()
@@ -58,7 +53,4 @@ class ClientModule {
         logging.level = HttpLoggingInterceptor.Level.BODY
         return logging
     }
-
-    @Provides
-    fun provideCache(@ApplicationQualifier context: Context) = Cache(context.cacheDir, CACHE_SIZE)
 }
