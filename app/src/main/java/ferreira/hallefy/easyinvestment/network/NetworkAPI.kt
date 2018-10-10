@@ -1,14 +1,14 @@
 package ferreira.hallefy.easyinvestment.network
 
 import ferreira.hallefy.easyinvestment.network.model.ResultInvestiment
-import ferreira.hallefy.easyinvestment.utils.Constants.URL_API
+import ferreira.hallefy.easyinvestment.utils.Constants.END_POINT
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NetworkAPI {
 
-    @GET(URL_API)
+    @GET(END_POINT)
     fun request(
             @Query("investedAmount") investedAmount: Int,
             @Query("index") index: String,

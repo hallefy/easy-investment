@@ -7,6 +7,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.support.AndroidSupportInjectionModule
 import ferreira.hallefy.easyinvestment.di.modules.AndroidModule
+import ferreira.hallefy.easyinvestment.di.modules.ApiModule
 import ferreira.hallefy.easyinvestment.di.modules.AplicationModule
 import ferreira.hallefy.easyinvestment.di.modules.ClientModule
 import javax.inject.Singleton
@@ -17,7 +18,8 @@ import javax.inject.Singleton
     AndroidModule::class,
     ActivityBuilder::class,
     AplicationModule::class,
-    ClientModule::class]))
+    ClientModule::class,
+    ApiModule::class]))
 
 interface ApplicationComponent : AndroidInjector<DaggerApplication> {
 

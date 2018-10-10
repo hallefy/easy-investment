@@ -26,10 +26,10 @@ class ClientModule {
     ): OkHttpClient {
 
         val okHttpClient = OkHttpClient.Builder()
-            .readTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-            .connectTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-            .writeTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
-            .cache(cache)
+//            .readTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
+//            .connectTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
+//            .writeTimeout(getTimeout().toLong(), TimeUnit.MILLISECONDS)
+//            .cache(cache)
             .addInterceptor { chain ->
 
                 val request: Request.Builder = chain.request().newBuilder()
