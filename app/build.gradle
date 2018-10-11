@@ -69,5 +69,6 @@ dependencies {
     androidTestImplementation "com.nhaarman:mockito-kotlin:$mockitoKotlin"
     testImplementation "com.nhaarman:mockito-kotlin:$mockitoKotlin"
 
+    testImplementation "io.mockk:mockk:$mockk"
 
 }
