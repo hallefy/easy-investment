@@ -5,10 +5,7 @@ import dagger.Module
 import dagger.Provides
 import ferreira.hallefy.easyinvestment.BuildConfig
 import ferreira.hallefy.easyinvestment.di.ApplicationQualifier
-import ferreira.hallefy.easyinvestment.utils.Constants.CACHE_SIZE
-import ferreira.hallefy.easyinvestment.utils.getTimeout
 import ferreira.hallefy.easyinvestment.utils.isNetworkAvailable
-import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.OkHttpClient
 import okhttp3.Request

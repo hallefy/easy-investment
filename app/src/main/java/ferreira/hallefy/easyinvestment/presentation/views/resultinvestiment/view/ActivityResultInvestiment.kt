@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import ferreira.hallefy.easyinvestment.R
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary
+import ferreira.hallefy.easyinvestment.utils.goToActivity
 import kotlinx.android.synthetic.main.activity_invest.*
 
 class ActivityResultInvestiment : AppCompatActivity() {
@@ -23,7 +24,7 @@ class ActivityResultInvestiment : AppCompatActivity() {
     fun initListeners() {
 
         btnSimularNovamente.setOnClickListener {
-            startActivity(Intent(this, ActivityFormulary::class.java))
+            goToActivity(ActivityFormulary::class.java)
         }
     }
 }

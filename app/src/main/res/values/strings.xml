@@ -24,4 +24,6 @@
     <string name="msg_percentual_cdi">Percentual do CDI investido</string>
     <string name="msg_rentabilidade_anual">Rentabilidade anual</string>
     <string name="msg_rentabilidade_periodo">Rentabilidade no período</string>
+    <string name="error_date">Digite uma data válida</string>
+    <string name="error_value_is_zero">Digite um valor maior que 0</string>
 </resources>
