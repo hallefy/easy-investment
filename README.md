@@ -1,3 +1,3 @@
 # easy-investment
 
-Aplication to simulate investment on CDI
+Application to simulate investment on CDI
