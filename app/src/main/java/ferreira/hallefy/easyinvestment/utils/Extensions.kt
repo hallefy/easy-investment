@@ -12,6 +12,8 @@ import java.util.*
 
 fun Activity.goToActivity(destinationClass: Class<*>) {
     var intent = Intent(this, destinationClass)
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     this.startActivity(intent)
 }
 
@@ -30,7 +32,6 @@ fun Editable.toFormatedDate() : String {
 
         return targetFormat.format(date)
     } catch (ex: ParseException) {
-        // Handle Exception.
     }
     return ""
 }
@@ -50,8 +51,6 @@ fun EditText.error(msg: String) {
 
     })
 }
-
-
 
 fun EditText.setMoneyMask() {
     this.addTextChangedListener(object: TextWatcher {

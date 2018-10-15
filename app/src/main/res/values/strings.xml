@@ -26,8 +26,9 @@
     <string name="msg_rentabilidade_periodo">Rentabilidade no período</string>
     <string name="error_date">Digite uma data válida</string>
     <string name="error_value_is_zero">Digite um valor maior que 0</string>
-    <string name="msg_error_dialog">Ocorrou um erro ao processar sua solicitação.</string>
+    <string name="msg_error_dialog">Ocorrou um erro ao processar sua solicitação. Verifique os campos e tente novamente.</string>
     <string name="btn_tentar_novamente">Tentar novamente</string>
     <string name="btn_cancelar">Cancelar</string>
     <string name="msg_progress_dialog">Simulando aguarde...</string>
+    <string name="dialog_aviso">Aviso</string>
 </resources>

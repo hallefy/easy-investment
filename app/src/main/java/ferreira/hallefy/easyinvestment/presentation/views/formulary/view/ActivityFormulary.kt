@@ -38,6 +38,7 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
     private fun setAlertDialog() {
         alertDialog = AlertDialog.Builder(this)
         alertDialog.run {
+            setTitle(getString(R.string.dialog_aviso))
             setMessage(getString(R.string.msg_error_dialog))
             setPositiveButton(getString(R.string.btn_tentar_novamente)) { _, _ ->
                 presenter.request()

@@ -2,11 +2,11 @@ package ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.vie
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import ferreira.hallefy.easyinvestment.R
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary
 import ferreira.hallefy.easyinvestment.utils.goToActivity
+import ferreira.hallefy.easyinvestment.utils.transformDate
 import kotlinx.android.synthetic.main.activity_invest.*
 
 class ActivityResultInvestiment : AppCompatActivity() {
@@ -30,6 +30,7 @@ class ActivityResultInvestiment : AppCompatActivity() {
 
     private fun setValues(response: SimulationResponseBusiness) {
         tvAmountResult.text = "R$ ${response.investmentParameter.investedAmount}"
+
         tvGrossAmountProfitTotal.text = "R$ ${response.grossAmountProfit}"
         tvInvestedAmount.text = "R$ ${response.investmentParameter.investedAmount}"
         tvGrossAmount.text = "R$ ${response.grossAmount}"
@@ -37,7 +38,7 @@ class ActivityResultInvestiment : AppCompatActivity() {
         tvTaxesAmount.text = "R$ ${response.taxesAmount}(${response.taxesRate}%)"
         tvNetAmount.text = "R$ ${response.netAmount}"
 
-        tvMaturityDate.text = "${response.investmentParameter.maturityDate}"
+        tvMaturityDate.text = transformDate(response.investmentParameter.maturityDate)
         tvTotalDays.text = "${response.investmentParameter.maturityTotalDays}"
         tvMonthlyGrossRateProfit.text = "${response.monthlyGrossRateProfit}%"
         tvRate.text = "${response.investmentParameter.rate}%"

@@ -1,13 +1,18 @@
 package ferreira.hallefy.easyinvestment.utils
 
 import android.content.Context
-import java.text.NumberFormat
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import android.util.Log
+import android.os.Handler
+import android.text.Editable
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+import android.view.animation.DecelerateInterpolator
+import android.widget.TextView
+import ferreira.hallefy.easyinvestment.R.id.textView
+import android.animation.ValueAnimator
+import org.w3c.dom.Text
 
 
 fun isNetworkAvailable(context: Context): Boolean {
@@ -41,4 +46,24 @@ fun isDateValid(date: String): Boolean {
     } catch (e: ParseException) {
         false
     }
+}
+
+fun transformDate(oldDate: String) : String {
+        val originalFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val targetFormat = SimpleDateFormat("dd/MM/yyyy")
+        val date: Date
+        try {
+            date = originalFormat.parse(oldDate)
+
+            return targetFormat.format(date)
+        } catch (ex: ParseException) {
+        }
+        return ""
+}
+
+fun TextView.startCountAnimation(value: Double) {
+    val animator = ValueAnimator.ofFloat(1.toFloat(), value.toFloat())
+    animator.duration = 2000
+    animator.addUpdateListener { animation -> this.text = "R$" + animation.animatedValue.toString() }
+    animator.start()
 }

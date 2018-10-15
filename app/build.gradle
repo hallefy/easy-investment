@@ -59,7 +59,7 @@ dependencies {
     implementation "javax.inject:javax.inject:$javaxInject"
     implementation "com.google.dagger:dagger:$dagger2"
     implementation "javax.annotation:javax.annotation-api:$javaxAnnotationApi"
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2"
     kapt "com.google.dagger:dagger-compiler:$daggerCompiler"
     compileOnly "org.glassfish:javax.annotation:$javaxAnnotation"
     implementation "com.google.dagger:dagger-android-support:$dagger2"
@@ -75,6 +75,4 @@ dependencies {
     testImplementation "io.mockk:mockk:$mockk"
 
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
-
-
 }
