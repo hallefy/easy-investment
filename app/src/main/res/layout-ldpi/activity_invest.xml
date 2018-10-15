@@ -7,7 +7,7 @@
     android:clipToPadding="true"
     android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".presentation.views.resultinvestiment.view.ActivityResultInvestiment">
+    tools:context=".presentation.views.result.view.ActivityResultInvestiment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

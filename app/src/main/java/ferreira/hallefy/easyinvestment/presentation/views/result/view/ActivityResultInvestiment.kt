@@ -1,4 +1,4 @@
-package ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.view
+package ferreira.hallefy.easyinvestment.presentation.views.result.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

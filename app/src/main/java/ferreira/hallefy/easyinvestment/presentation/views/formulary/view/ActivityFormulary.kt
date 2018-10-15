@@ -9,7 +9,7 @@ import ferreira.hallefy.easyinvestment.R
 import ferreira.hallefy.easyinvestment.domain.model.SimulationRequest
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation.FormularyPresenter
-import ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.view.ActivityResultInvestiment
+import ferreira.hallefy.easyinvestment.presentation.views.result.view.ActivityResultInvestiment
 import ferreira.hallefy.easyinvestment.utils.*
 import kotlinx.android.synthetic.main.activity_form.*
 import javax.inject.Inject

@@ -20,7 +20,7 @@
 
         <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary"/>
 
-        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.view.ActivityResultInvestiment" />
+        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.result.view.ActivityResultInvestiment" />
 
         <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.splash.view.ActivitySplash">
             <intent-filter>
