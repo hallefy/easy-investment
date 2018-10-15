@@ -18,11 +18,14 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary"/>
+        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.formulary.view.ActivityFormulary"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.result.view.ActivityResultInvestiment" />
+        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.result.view.ActivityResultInvestiment"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.splash.view.ActivitySplash">
+        <activity android:name="ferreira.hallefy.easyinvestment.presentation.views.splash.view.ActivitySplash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

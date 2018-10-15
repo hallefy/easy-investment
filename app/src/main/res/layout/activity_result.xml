@@ -373,7 +373,7 @@
             android:layout_marginRight="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_shape_blue"
+            android:background="@drawable/rounded_shape_gray"
             android:text="Simular novamente"
             android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"

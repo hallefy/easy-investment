@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="true"
     android:fillViewport="true"
+    android:scrollbars="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".presentation.views.result.view.ActivityResultInvestiment">
 
@@ -234,6 +235,7 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_thin"
                 android:text="@string/msg_data_resgate"
                 android:textAlignment="center"
@@ -378,8 +380,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_shape_blue"
+                android:background="@drawable/rounded_shape_gray"
                 android:text="Simular novamente"
                 android:textColor="@color/colorAccent" />
 
