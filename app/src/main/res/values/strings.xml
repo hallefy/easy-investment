@@ -31,4 +31,5 @@
     <string name="btn_cancelar">Cancelar</string>
     <string name="msg_progress_dialog">Simulando aguarde...</string>
     <string name="dialog_aviso">Aviso</string>
+    <string name="error_date_out_range">A data não pode ser igual ou menor do que a data de hoje.</string>
 </resources>

@@ -5,7 +5,9 @@ import ferreira.hallefy.easyinvestment.domain.interactor.RequestSimulationUseCas
 import ferreira.hallefy.easyinvestment.domain.model.SimulationRequest
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.FormularyView
-import ferreira.hallefy.easyinvestment.utils.isDateValid
+import ferreira.hallefy.easyinvestment.utils.diffDate
+import ferreira.hallefy.easyinvestment.utils.isInvalidDate
+import ferreira.hallefy.easyinvestment.utils.toFormatedDate
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
@@ -21,7 +23,7 @@ class FormularyPresenterImpl @Inject constructor(
                     "CDI",
                     view.getPercentage(),
                     false,
-                    view.getDate())
+                    view.getDate().toFormatedDate())
             useCase.execute(SimulationDisposable(), params)
             view.showProgress()
         }
@@ -32,13 +34,18 @@ class FormularyPresenterImpl @Inject constructor(
     }
 
     fun validateFields() : Boolean{
+        Log.i("hallefy", "diffDate: ${diffDate(view.getDate())}")
         return when {
             view.getAmout().isEmpty() -> {
                 view.setErrorAmount()
                 false
             }
-            isDateValid(view.getDate()) -> {
+            view.getDate().isInvalidDate() -> {
                 view.setErrorDate()
+                false
+            }
+            diffDate(view.getDate()) <= 0 -> {
+                view.setErrorDateOutRange()
                 false
             }
             view.getPercentage().isEmpty() -> {

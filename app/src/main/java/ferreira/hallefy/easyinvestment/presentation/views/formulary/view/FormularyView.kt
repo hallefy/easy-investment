@@ -13,4 +13,5 @@ interface FormularyView {
     fun showDialogError()
     fun showProgress()
     fun hideProgress()
+    fun setErrorDateOutRange()
 }

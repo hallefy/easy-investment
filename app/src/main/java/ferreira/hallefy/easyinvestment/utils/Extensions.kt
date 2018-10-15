@@ -23,7 +23,7 @@ fun Editable.toFormatedAmount() : String {
             .replace(",", ".")
 }
 
-fun Editable.toFormatedDate() : String {
+fun String.toFormatedDate() : String {
     val originalFormat = SimpleDateFormat("dd/MM/yyyy")
     val targetFormat = SimpleDateFormat("yyyy-MM-dd")
     val date: Date

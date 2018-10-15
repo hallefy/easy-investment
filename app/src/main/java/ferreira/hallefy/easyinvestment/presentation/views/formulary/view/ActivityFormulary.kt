@@ -64,7 +64,7 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
     }
 
     override fun getDate() : String {
-        return inputDataVencimento.text.toFormatedDate()
+        return ""+inputDataVencimento.text.toString()
     }
 
     override fun getPercentage() : String {
@@ -73,6 +73,10 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
 
     override fun setErrorDate() {
         inputDataVencimento.error(getString(R.string.error_date))
+    }
+
+    override fun setErrorDateOutRange() {
+        inputDataVencimento.error(getString(R.string.error_date_out_range))
     }
 
     override fun setErrorAmount() {
