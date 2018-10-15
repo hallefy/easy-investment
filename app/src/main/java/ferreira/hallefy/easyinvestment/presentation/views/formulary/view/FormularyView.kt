@@ -11,4 +11,6 @@ interface FormularyView {
     fun setErrorPercentage()
     fun setErrorAmount()
     fun showDialogError()
+    fun showProgress()
+    fun hideProgress()
 }

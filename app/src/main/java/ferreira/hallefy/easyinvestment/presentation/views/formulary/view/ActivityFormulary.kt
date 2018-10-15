@@ -1,10 +1,10 @@
 package ferreira.hallefy.easyinvestment.presentation.views.formulary.view
 
 import android.app.AlertDialog
-import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import dagger.android.support.DaggerAppCompatActivity
+import dmax.dialog.SpotsDialog
 import ferreira.hallefy.easyinvestment.R
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation.FormularyPresenter
@@ -13,26 +13,20 @@ import ferreira.hallefy.easyinvestment.utils.*
 import kotlinx.android.synthetic.main.activity_form.*
 import javax.inject.Inject
 
+
+
 class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
 
     @Inject
     lateinit var presenter: FormularyPresenter
     lateinit var alertDialog: AlertDialog.Builder
+    lateinit var progressDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
-//
-//        var skeletonScreen = Skeleton.bind(viewForm)
-//                .load(R.layout.form_skeleton)
-//                .show()
-//
-//       Handler().postDelayed({
-//            skeletonScreen.hide()
-//        }, 2000)
 
         setUp()
-
     }
 
     private fun setUp() {
@@ -44,12 +38,21 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
     private fun setAlertDialog() {
         alertDialog = AlertDialog.Builder(this)
         alertDialog.run {
-            setMessage("Ocorrou um erro ao processar sua solicitação.")
-            setPositiveButton("Tentar novamente") { _, _ ->
+            setMessage(getString(R.string.msg_error_dialog))
+            setPositiveButton(getString(R.string.btn_tentar_novamente)) { _, _ ->
                 presenter.request()
             }
-            setNegativeButton("Cancelar", null)
+            setNegativeButton(getString(R.string.btn_cancelar), null)
         }.create()
+
+        progressDialog = SpotsDialog.Builder().setContext(this).build()
+        progressDialog.apply {
+            setMessage(getString(R.string.msg_progress_dialog))
+            setCancelable(true)
+            setOnCancelListener {
+                presenter.dispose()
+            }
+        }
     }
 
     override fun showDialogError() {
@@ -86,18 +89,28 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
     }
 
     override fun startSimulation(response: SimulationResponseBusiness) {
-        goToActivity(ActivityResultInvestiment::class.java)
+        var intent = Intent(this, ActivityResultInvestiment::class.java)
+        intent.putExtra("response", response)
+
+        startActivity(intent)
+    }
+
+    override fun showProgress() {
+        progressDialog.show()
+    }
+
+    override fun hideProgress() {
+        progressDialog.dismiss()
     }
 
     private fun initListeners() {
-
         btnSimular.setOnClickListener {
             presenter.request()
         }
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onDestroy() {
+        super.onDestroy()
         presenter.dispose()
     }
 }

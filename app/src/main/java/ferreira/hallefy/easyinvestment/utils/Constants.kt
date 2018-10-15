@@ -1,7 +1,9 @@
 package ferreira.hallefy.easyinvestment.utils
 
+import java.util.*
+
 object Constants {
-    const val CACHE_SIZE: Long = 10 * 1024 * 1024
+    var CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR)
     const val BASE_URL = "https://api-simulator-calc.easynvest.com.br/"
     const val END_POINT = "calculator/simulate"
 }

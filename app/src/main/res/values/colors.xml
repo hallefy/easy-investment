@@ -5,4 +5,5 @@
     <color name="colorAccent">#ffffff</color>
     <color name="colorTextView">#686766</color>
     <color name="skeleton_text">#a2878787</color>
+    <color name="done_color"></color>
 </resources>
