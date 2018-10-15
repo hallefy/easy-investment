@@ -7,9 +7,11 @@ import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation.FormularyPresenter
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation.FormularyPresenterImpl
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.FormularyView
+import io.mockk.mockk
 import io.reactivex.observers.DisposableSingleObserver
 import org.junit.Before
 import org.junit.Test
+import java.lang.Exception
 
 class FormularyPresenterTest {
 
@@ -28,11 +30,67 @@ class FormularyPresenterTest {
     }
 
     @Test
-    fun `test function validateFields`() {
+    fun `test function validateFields call setErrorAmount`() {
         request = SimulationRequest("","CDI","", false, "31/02/2018")
 
         presenter.request(request)
 
         verify(view, times(1)).setErrorAmount()
+    }
+
+    @Test
+    fun `test function validateFields call setErrorDate`() {
+        request = SimulationRequest("R$200,00","CDI","", false, "31/02/2018")
+
+        presenter.request(request)
+
+        verify(view, times(1)).setErrorDate()
+    }
+
+    @Test
+    fun `test function validateFields call setErrorDateOutRange`() {
+        request = SimulationRequest("R$200,00","CDI","", false, "22/02/2018")
+
+        presenter.request(request)
+
+        verify(view, times(1)).setErrorDateOutRange()
+    }
+
+    @Test
+    fun `test function validateFields call setErrorPercentage`() {
+        request = SimulationRequest("R$200,00","CDI","", false, "22/02/2019")
+
+        presenter.request(request)
+
+        verify(view, times(1)).setErrorPercentage()
+    }
+
+    @Test
+    fun `test useCase on receive response success`() {
+        request = SimulationRequest("R$200,00","CDI","123", false, "22/02/2019")
+        var response: SimulationResponseBusiness = mockk()
+        presenter.request(request)
+
+        verify(view, times(1)).showProgress()
+
+        verify(useCase, times(1)).execute(disposable.capture(), eq(request))
+        disposable.firstValue.onSuccess(response)
+
+        verify(view, times(1)).hideProgress()
+        verify(view, times(1)).startSimulation(response)
+    }
+
+    @Test
+    fun `test useCase on receive response error`() {
+        request = SimulationRequest("R$200,00","CDI","123", false, "22/02/2019")
+        presenter.request(request)
+
+        verify(view, times(1)).showProgress()
+
+        verify(useCase, times(1)).execute(disposable.capture(), eq(request))
+        disposable.firstValue.onError(Exception())
+
+        verify(view, times(1)).hideProgress()
+        verify(view, times(1)).showDialogError()
     }
 }

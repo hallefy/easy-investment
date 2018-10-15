@@ -18,12 +18,8 @@ class FormularyPresenterImpl @Inject constructor(
     override fun request(requestParams: SimulationRequest) {
 
         if(validateFields(requestParams)) {
-            var params = SimulationRequest(
-                    view.getAmout(),
-                    "CDI",
-                    view.getPercentage(),
-                    false,
-                    view.getDate().toFormatedDate())
+            var params = requestParams
+            params.maturityDate = requestParams.maturityDate.toFormatedDate()
             useCase.execute(SimulationDisposable(), params)
             view.showProgress()
         }
@@ -47,7 +43,7 @@ class FormularyPresenterImpl @Inject constructor(
                 view.setErrorDateOutRange()
                 false
             }
-            requestParams.rate.isEmpty() -> {
+            requestParams.rate.trim().isEmpty() -> {
                 view.setErrorPercentage()
                 false
             }
