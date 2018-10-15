@@ -20,7 +20,7 @@ class RequestSimulationUseCase @Inject constructor(
     uiThread,
     disposables
 ) {
-    override fun buildUseCaseObservable(params: SimulationRequest): Single<SimulationResponseBusiness> {
+    public override fun buildUseCaseObservable(params: SimulationRequest): Single<SimulationResponseBusiness> {
         return repository.getSimulationInfo(params)
     }
 }

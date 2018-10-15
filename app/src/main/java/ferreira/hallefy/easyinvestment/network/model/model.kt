@@ -1,7 +1,7 @@
 package ferreira.hallefy.easyinvestment.network.model
 
 data class InvestmentParameter(
-    var investedAmount: Int,
+    var investedAmount: Double,
     var yearlyInterestRate: Double,
     var maturityTotalDays: Int,
     var maturityBusinessDays: Int,
@@ -20,7 +20,7 @@ data class ResultInvestiment(
     var annualGrossRateProfit: Double,
     var monthlyGrossRateProfit: Double,
     var dailyGrossRateProfit: Double,
-    var taxesRate: Int,
+    var taxesRate: Double,
     var rateProfit: Double,
     var annualNetRateProfit: Double
 )

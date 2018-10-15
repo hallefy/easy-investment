@@ -5,6 +5,7 @@ import ferreira.hallefy.easyinvestment.domain.interactor.RequestSimulationUseCas
 import ferreira.hallefy.easyinvestment.domain.model.SimulationRequest
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.view.FormularyView
+import ferreira.hallefy.easyinvestment.utils.isDateValid
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
@@ -14,21 +15,49 @@ class FormularyPresenterImpl @Inject constructor(
 ) : FormularyPresenter{
 
     override fun request() {
-        var params = SimulationRequest(3000.0, "CDI", 123, false, "2023-03-03")
-        useCase.execute(SimulationDisposable(), params)
+        if(validateFields()) {
+            var params = SimulationRequest(
+                    view.getAmout(),
+                    "CDI",
+                    view.getPercentage(),
+                    false,
+                    view.getDate())
+            useCase.execute(SimulationDisposable(), params)
+            view.showProgress()
+        }
     }
 
     override fun dispose() {
         useCase.dispose()
     }
 
+    fun validateFields() : Boolean{
+        return when {
+            view.getAmout().isEmpty() -> {
+                view.setErrorAmount()
+                false
+            }
+            isDateValid(view.getDate()) -> {
+                view.setErrorDate()
+                false
+            }
+            view.getPercentage().isEmpty() -> {
+                view.setErrorPercentage()
+                false
+            }
+            else -> true
+        }
+    }
+
     inner class SimulationDisposable : DisposableSingleObserver<SimulationResponseBusiness>() {
         override fun onSuccess(response: SimulationResponseBusiness) {
-            Log.i("hallefy", "response: $response")
+            view.hideProgress()
+            view.startSimulation(response)
         }
 
         override fun onError(e: Throwable?) {
-            Log.i("hallefy", "exception: $e")
+            view.hideProgress()
+            view.showDialogError()
         }
     }
 }

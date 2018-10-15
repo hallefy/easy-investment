@@ -1,9 +1,9 @@
 package ferreira.hallefy.easyinvestment.domain.model
 
 data class SimulationRequest(
-    var investedAmount: Double,
+    var investedAmount: String,
     var index: String,
-    var rate: Int,
+    var rate: String,
     var isTaxFree: Boolean,
     var maturityDate: String
 )
