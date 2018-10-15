@@ -1,6 +1,5 @@
 package ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation
 
-import android.util.Log
 import ferreira.hallefy.easyinvestment.domain.interactor.RequestSimulationUseCase
 import ferreira.hallefy.easyinvestment.domain.model.SimulationRequest
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
@@ -16,8 +15,9 @@ class FormularyPresenterImpl @Inject constructor(
     var view: FormularyView
 ) : FormularyPresenter{
 
-    override fun request() {
-        if(validateFields()) {
+    override fun request(requestParams: SimulationRequest) {
+
+        if(validateFields(requestParams)) {
             var params = SimulationRequest(
                     view.getAmout(),
                     "CDI",
@@ -33,22 +33,21 @@ class FormularyPresenterImpl @Inject constructor(
         useCase.dispose()
     }
 
-    fun validateFields() : Boolean{
-        Log.i("hallefy", "diffDate: ${diffDate(view.getDate())}")
+    fun validateFields(requestParams: SimulationRequest): Boolean{
         return when {
-            view.getAmout().isEmpty() -> {
+            requestParams.investedAmount.isEmpty() -> {
                 view.setErrorAmount()
                 false
             }
-            view.getDate().isInvalidDate() -> {
+            requestParams.maturityDate.isInvalidDate() -> {
                 view.setErrorDate()
                 false
             }
-            diffDate(view.getDate()) <= 0 -> {
+            diffDate(requestParams.maturityDate) <= 0 -> {
                 view.setErrorDateOutRange()
                 false
             }
-            view.getPercentage().isEmpty() -> {
+            requestParams.rate.isEmpty() -> {
                 view.setErrorPercentage()
                 false
             }

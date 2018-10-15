@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 import javax.inject.Named
 
-class RequestSimulationUseCase @Inject constructor(
+open class RequestSimulationUseCase @Inject constructor(
     val repository: SimulationRepository,
     @Named("SchedulerIO") executorThread: Scheduler,
     @Named("AndroidScheduler") uiThread: Scheduler,

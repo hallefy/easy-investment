@@ -6,6 +6,7 @@ import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
 import dmax.dialog.SpotsDialog
 import ferreira.hallefy.easyinvestment.R
+import ferreira.hallefy.easyinvestment.domain.model.SimulationRequest
 import ferreira.hallefy.easyinvestment.domain.model.SimulationResponseBusiness
 import ferreira.hallefy.easyinvestment.presentation.views.formulary.presentation.FormularyPresenter
 import ferreira.hallefy.easyinvestment.presentation.views.resultinvestiment.view.ActivityResultInvestiment
@@ -39,7 +40,7 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
             setTitle(getString(R.string.dialog_aviso))
             setMessage(getString(R.string.msg_error_dialog))
             setPositiveButton(getString(R.string.btn_tentar_novamente)) { _, _ ->
-                presenter.request()
+                presenter.request(getRequestParams())
             }
             setNegativeButton(getString(R.string.btn_cancelar), null)
         }.create()
@@ -53,6 +54,10 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
                 presenter.dispose()
             }
         }
+    }
+
+    private fun getRequestParams() : SimulationRequest{
+        return  SimulationRequest(getAmout(), "CDI", getPercentage(), false, getDate())
     }
 
     override fun showDialogError() {
@@ -109,7 +114,7 @@ class ActivityFormulary : DaggerAppCompatActivity(), FormularyView {
 
     private fun initListeners() {
         btnSimular.setOnClickListener {
-            presenter.request()
+            presenter.request(getRequestParams())
         }
     }
 
