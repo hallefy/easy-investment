@@ -54,7 +54,7 @@ fun EditText.error(msg: String) {
 
 fun Double.formatMoney() : String {
     val nf = NumberFormat.getCurrencyInstance()
-    return nf.format(this).replace("$", "R$")
+    return nf.format(this)
 }
 
 fun EditText.setMoneyMask() {
